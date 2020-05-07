@@ -1,0 +1,75 @@
+<head><link href="https://unpkg.com/ace-css/css/ace.min.css" rel="stylesheet"/><style type="text/css">.content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.hash:before { content: "("; }
+.hash:after  { content: ")"; }
+.hash {
+  margin-right: 1em;
+}
+
+.release.major {
+  border-left: 5px solid #FF5254;
+}
+
+.release.major h3 {
+  background: #FF5254;
+}
+
+.release.minor {
+  border-left: 5px solid #2790B0;
+}
+
+.release.minor h3 {
+  background: #2790B0;
+}
+
+.release.patch {
+  border-left: 5px solid #9A8194;
+}
+
+.release.patch h3 {
+  background: #9A8194;
+}
+
+
+h1, h3 {
+  padding: 0.5em 1em;
+}
+</style></head><body><div class="content"><h1>Flowplayer Native / Changelog</h1><div class="release minor"><h3>v2.3.2</h3><ol class="commits"><li class="fix"><h5><span class="hash">c3ee3bb</span><span class="subject">change macro mapping to underscore</span></h5><p>fixes #957</p></li><li class="feat"><h5><span class="hash">47715e5</span><span class="subject">expose flowplayer:umd document-level event</span></h5><p>closes #872</p></li></ol></div><div class="release minor"><h3>v2.3.1</h3><ol class="commits"><li class="fix"><h5><span class="hash">3bbd472</span><span class="subject">iOS uses loadeddata for video dimension props; (#948)</span></h5></li><li class="fix"><h5><span class="hash">57694c8</span><span class="subject">do not use Date.parse (#947)</span></h5><p>closes #946</p></li><li class="fix"><h5><span class="hash">c67b593</span><span class="subject">more finegrained multi-drm support (#942)</span></h5><p>handles the case where multiple drm providers maybe configured, but certain platforms do not support some subset of the configured drm providers. </p></li><li class="fix"><h5><span class="hash">df64a3b</span><span class="subject">active menu should be a singleton state</span></h5><p>adds logic to toggle player-level siblings as closed when another menu is opened</p><p>closes #927</p></li><li class="fix"><h5><span class="hash">511c631</span><span class="subject">handle live stream drift on play resume (#930)</span></h5></li><li class="feat"><h5><span class="hash">dd6117e</span><span class="subject">move dash and fairplay to drm plugin</span></h5></li><li class="feat"><h5><span class="hash">5f34566</span><span class="subject">move HLS drm into drm plugin</span></h5></li><li class="feat"><h5><span class="hash">e4d7105</span><span class="subject">implement fairplay drm</span></h5><p>Fixes #921</p></li></ol></div><div class="release minor"><h3>v2.2.0</h3><ol class="commits"><li class="fix"><h5><span class="hash">e4cb21e</span><span class="subject">added svg icons</span></h5></li><li class="fix"><h5><span class="hash">2b18ddc</span><span class="subject">handle several media errors during a long session (#903)</span></h5><p>Use epoc-based error recovery algorthim versus a counter-based.</p></li><li class="fix"><h5><span class="hash">65a6541</span><span class="subject">handle share.iframe is Boolean case from ovp; (#907)</span></h5></li><li class="fix"><h5><span class="hash">e35200d</span><span class="subject">enlarge floating buttons</span></h5></li><li class="fix"><h5><span class="hash">e300d2c</span><span class="subject">add flag to hide standard controls from floating player</span></h5></li><li class="fix"><h5><span class="hash">55f551c</span><span class="subject">scaling button</span></h5></li><li class="fix"><h5><span class="hash">a1d4d70</span><span class="subject">add portrait default</span></h5></li><li class="feat"><h5><span class="hash">83d7b50</span><span class="subject">initial implementation</span></h5></li><li class="fix"><h5><span class="hash">e7e70d1</span><span class="subject">warning if floating player in iframe</span></h5></li><li class="fix"><h5><span class="hash">693d47c</span><span class="subject">fine-tuning</span></h5></li><li class="fix"><h5><span class="hash">c634157</span><span class="subject">keep header</span></h5></li><li class="fix"><h5><span class="hash">f0425ee</span><span class="subject">add bigger buttons for mute and close</span></h5></li><li class="fix"><h5><span class="hash">46557da</span><span class="subject">pause playback when floating player closed</span></h5></li></ol></div><div class="release patch"><h3>v2.1.8</h3><ol class="commits"><li class="fix"><h5><span class="hash">7ff3dd0</span><span class="subject">adjust offset by 1 so that setSrc works when livestream starts</span></h5></li><li class="fix"><h5><span class="hash">a25911c</span><span class="subject">do not trigger error if there are working sources (#893)</span></h5><p>Count number of errors sources and compare to number of attempted sources.</p></li><li class="fix"><h5><span class="hash">c386d43</span><span class="subject">playlist assert fails if controls:true (#888)</span></h5><p>* fix: playlist assert fails if controls:true
+
+* fix: add additional function for getting controls element for playlist</p></li></ol></div><div class="release patch"><h3>v2.1.7</h3><ol class="commits"><li class="fix"><h5><span class="hash">1f4508d</span><span class="subject">handle Maybe&lt;flowplayer.instances&gt; case (#897)</span></h5></li></ol></div><div class="release minor"><h3>v2.1.6</h3><ol class="commits"><li class="feat"><h5><span class="hash">132eaff</span><span class="subject">inter-frame-communication (#886)</span></h5><p>* feat(iframe): inter-frame-communication
+
+* fix: added return statement
+
+* fix: add warning if multiple player instances in iframe</p></li><li class="fix"><h5><span class="hash">fcf29b9</span><span class="subject">standard resolution labels</span></h5></li><li class="fix"><h5><span class="hash">4c1a489</span><span class="subject">keep the last word always</span></h5></li><li class="fix"><h5><span class="hash">c9337d4</span><span class="subject">safety check to prevent infinite loop</span></h5></li><li class="fix"><h5><span class="hash">a791958</span><span class="subject">recover from errornous fragment (#849)</span></h5><p>* fix: recover from errornous fragment
+
+* fix: intermediate fix for media error recover
+
+* fix: use parsed fragment data to start from available position
+
+* fix: remove unused recovering state
+
+* chore: revert live demo url</p></li><li class="fix"><h5><span class="hash">4eca08e</span><span class="subject">propogate http error messages to the player (#882)</span></h5><p>closes #881</p></li></ol></div><div class="release patch"><h3>v2.1.5</h3><ol class="commits"><li class="fix"><h5><span class="hash">f75036c</span><span class="subject">allow to use ads plugin UI flags in player config (#866)</span></h5><p>* fix: allow to use ads plugin UI flags in player config
+
+* fix: allow to use flowplayer.ads.ui for ads plugin flags
+
+* fix: use extend()
+
+* fix: remove empty lines
+
+* fix: expose everything from ads object
+
+* fix: set flowplayer.ads if not set
+
+* Revert &quot;fix: set flowplayer.ads if not set&quot;
+
+This reverts commit 225f5a8d49883745b92a716004b0c1814708542e.</p></li></ol></div><div class="release patch"><h3>v2.1.4</h3><ol class="commits"><li class="fix"><h5><span class="hash">de0eb16</span><span class="subject">allow mixed ovp and inline config for playlist (#864)</span></h5><p>* fix: allow mixed ovp and inline config for playlist
+
+* chore: playlist ovp mixed config</p></li><li class="fix"><h5><span class="hash">bcf2bda</span><span class="subject">focus menu only when is-accessibility (#870)</span></h5></li><li class="fix"><h5><span class="hash">e7da21d</span><span class="subject">content gets scrolled back to player while playing</span></h5></li></ol></div><div class="release patch"><h3>v2.1.3</h3><ol class="commits"><li class="fix"><h5><span class="hash">0f8f8cc</span><span class="subject">close menu when no longer visible / control bar toggled off</span></h5></li><li class="fix"><h5><span class="hash">c38ea24</span><span class="subject">truncate long title and description (#852)</span></h5><p>fixes #839</p></li><li class="fix"><h5><span class="hash">e154942</span><span class="subject">scrollbars are displayed by default for the title in IE11 (#859)</span></h5></li><li class="fix"><h5><span class="hash">9da2a3f</span><span class="subject">rewind should work with setState (#861)</span></h5></li><li class="fix"><h5><span class="hash">02334fc</span><span class="subject">exception on IE11 (#857)</span></h5></li><li class="fix"><h5><span class="hash">9681fb6</span><span class="subject">close menu when no longer visible when control bar toggled off</span></h5></li><li class="fix"><h5><span class="hash">81793d6</span><span class="subject">monkey patch hls _clearTrack internals (#841)</span></h5><p>* chore(cuepoints): namespace our cuepoint track
+
+* chore(cuepoints): null guard on track.cues
+
+* fix(hls): monkey-patch hls _clearTracks() impl
+
+* chore(hls): remove console.debug</p></li></ol></div></div></body>
